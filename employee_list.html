@@ -5,8 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="bulma/bulma.css">
-  <link rel="stylesheet" href="CSS/style.css">
   <title>EMPLOYEE LIST</title>
+  <style>
+    .custom-width-table {
+      width: 90%; 
+      margin: 0 auto; 
+    }
+  </style>
 </head>
 
 <body>
@@ -17,10 +22,10 @@
     </div>
   </section>
 
-  <div class="columns is-gapless is-fullheight">
-    <div class="column is-one-fifth is-fullheight">
+  <div class="columns is-gapless">
+    <div class="column is-one-fifth">
       <section class="hero has-background-primary">
-        <div class="hero-body is-5 ">
+        <div class="hero-body">
           <p class="subtitle is-5 is-family-sans-serif has-text-weight-bold">Employee List</p>
         </div>
       </section>
@@ -53,6 +58,61 @@
         <div class="hero-body">
           <p class="subtitle is-5 is-family-sans-serif has-text-weight-bold">Logout</p>
         </div>
+      </section>
+    </div>
+    <div class="column is-centered"> 
+      <section class="hero is-1 is-family-secondary is-italic">
+        <div class="hero-body">
+          <p class="title is-4">Employee List</p>
+        </div>
+      </section>
+    
+      <div class="table-container">
+        <table class="table is-bordered mx-6 custom-width-table"> 
+          <thead>
+            <tr>
+              <th class="is-link">Employee</th>
+              <th class="is-primary">Last Name</th>
+              <th class="is-link">First Name</th>
+              <th class="is-primary">Gender</th>
+              <th class="is-link">Position</th>
+          </thead>
+        <tbody>
+          <tr style="height: 10vh;">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr style="height: 10vh;">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr style="height: 10vh;">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr style="height: 10vh;">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 </body>
 
