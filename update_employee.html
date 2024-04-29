@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <title>ADD LIST</title>
+  <style>
+    body {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 6;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero is-1 has-background-info is-family-secondary is-italic">
+    <div class="hero-body">
+      <p class="title is-4">Employee Information System</p>
+      <p class="subtitle is-5 is-family-monospace">Bernalyn Mecurio Benedicto</p>
+    </div>
+  </section>
+
+  <div class="columns is-gapless">
+    <div class="column is-one-fifth">
+      <section class="hero has-background-primary">
+        <div class="hero-body">
+          <p class="subtitle is-5 is-family-sans-serif has-text-weight-bold">Employee List</p>
+        </div>
+      </section>
+
+      <section class="hero has-background-info">
+        <div class="hero-body">
+          <p class="subtitle is-5 is-family-sans-serif has-text-weight-bold">Personal Info</p>
+        </div>
+      </section>
+
+      <section class="hero has-background-primary">
+        <div class="hero-body">
+          <p class="subtitle is-5 is-family-sans-serif has-text-weight-bold">Educational Info</p>
+        </div>
+      </section>
+
+      <section class="hero has-background-info">
+        <div class="hero-body">
+          <p class="subtitle is-5 is-family-sans-serif has-text-weight-bold">Work Exp</p>
+        </div>
+      </section>
+
+      <section class="hero has-background-primary">
+        <div class="hero-body">
+          <p class="subtitle is-5 is-family-sans-serif has-text-weight-bold">Trainings</p>
+        </div>
+      </section>
+
+      <section class="hero has-background-info">
+        <div class="hero-body">
+          <p class="subtitle is-5 is-family-sans-serif has-text-weight-bold">Logout</p>
+        </div>
+      </section>
+    </div>
+    <div class="column is-centered has-background-danger-light">
+      <section class="title is-4 is-family-secondary has-text-weight-bold">
+        <div class="hero-body">
+          <p class="title">
+            <center><b>UPDATE EMPLOYEE</b></center>
+          </p>
+        </div>
+      </section>
+
+      <div style="max-width: 900px;" class="container">
+        <form class="box has-background-danger">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">EMPLOYEE ID</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter employee id">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">LAST NAME</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter last name">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">FIRST NAME</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter first name">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">MIDDLE NAME</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter middle name">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">ADDRESS</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter address">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">BIRTHDAY</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="date" placeholder="Enter birthday">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">CIVIL STATUS</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="select">
+                  <select>
+                    <option></option>
+                    <option>SINGLE</option>
+                    <option>MARRIED</option>
+                    <option>IN AN OPEN RELATIONSHIP</option>
+                    <option>WIDOWED</option>
+                    <option>KABIT</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control">
+              <button class="button has-background-danger-light">
+                <a class="has-text-black" href="employee_list.html">SAVE</a>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p></p>
+    </div>
+  </footer>
+</body>
+
+</html>
