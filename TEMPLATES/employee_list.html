@@ -5,17 +5,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ url_for('static', filename='bulma/bulma.css') }}">
-  <title>EMPLOYEE LIST</title>
+  <title>Employee List</title>
   <style>
-    .custom-width-table {
-      width: 90%; 
-      margin: 0 auto; 
+    <style>.custom-width-table {
+      width: 90%;
+      margin: 0 auto;
     }
+
+    .hero-body p {
+      margin: 0.5rem 0;
+    }
+
+    @media (max-width: 760px) {
+      .column.is-one-fifth {
+        width: 100%;
+      }
+
+      .hero-body p {
+        text-align: center;
+      }
+
+      .custom-width-table {
+        width: 100%;
+      }
+    }
+
+    .messagebox {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      background-color: rgb(58, 222, 183);
+      transform: translateX(-50%);
+      color: rgb(0, 0, 0);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.5rem;
+      z-index: 9999;
+      text-align: center;
+      padding: 20px 40px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    .ok-button {
+      display: block;
+      margin-top: 10px;
+      padding: 5px 15px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .add-button {
+      position: relative;
+      display: block;
+      width: 300px;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #00d1b2;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 1rem;
+    }
+  </style>
   </style>
 </head>
 
 <body>
-  <section class="hero is-1 has-background-info is-family-secondary is-italic">
+  <section class="hero is-info is-family-secondary is-italic">
     <div class="hero-body">
       <p class="title is-4">Employee Information System</p>
       <p class="subtitle is-5 is-family-monospace">Bernalyn Mecurio Benedicto</p>
@@ -23,7 +92,7 @@
   </section>
 
   <div class="columns is-gapless">
-    <div class="column is-one-fifth">
+    <div class="column is-one-fifth is-full-mobile">
       <section class="hero has-background-primary">
         <div class="hero-body">
           <p class="subtitle is-5 is-family-sans-serif has-text-weight-bold">Employee List</p>
@@ -60,36 +129,72 @@
         </div>
       </section>
     </div>
-    <div class="column is-centered"> 
-      <section class="hero is-1 is-family-secondary is-italic">
+    <div class="column is-full-mobile">
+      <section class="hero is-family-secondary is-italic">
         <div class="hero-body">
           <p class="title is-4">Employee List</p>
         </div>
       </section>
-    
+      </section>
+
+      {% if message %}
+      <div class="messagebox">
+        {{ message }}
+        <button class="ok-button" onclick="this.parentElement.style.display='none';">OK</button>
+      </div>
+      {% endif %}
+
+      <a href="{{ url_for('add_form') }}" class="add-button">+Add Employee</a>
+
       <div class="table-container">
-        <table class="table is-bordered mx-6 custom-width-table"> 
+        <table class="table is-bordered is-fullwidth custom-width-table">
           <thead>
             <tr>
-              <th class="is-link"><center>Employee</center></th>
-              <th class="is-primary"><center>Last Name</center></th>
-              <th class="is-link"><center>First Name</center></th>
-              <th class="is-primary"><center>Middle Name</center></th>
+              <th class="is-link">
+                <center>Employee</center>
+              </th>
+              <th class="is-primary">
+                <center>Last Name</center>
+              </th>
+              <th class="is-link">
+                <center>First Name</center>
+              </th>
+              <th class="is-primary">
+                <center>Middle Name</center>
+              </th>
+              <th class="is-primary">
+                <center>Actions</center>
+              </th>
             </tr>
-         <tr>
-          {% for employee in employees %}
-          <tr>
-              <td><center>{{ employee[0] }}</center></td>
-              <td><center>{{ employee[1] }}</center></td>
-              <td><center>{{ employee[2] }}</center></td>
-              <td><center>{{ employee[3] }}</center></td>
+          </thead>
+          <tbody>
+            {% for employee in employees %}
+            <tr>
+              <td>
+                <center>{{ employee[0] }}</center>
+              </td>
+              <td>
+                <center>{{ employee[1] }}</center>
+              </td>
+              <td>
+                <center>{{ employee[2] }}</center>
+              </td>
+              <td>
+                <center>{{ employee[3] }}</center>
+              </td>
+              <td>
+                <center>
+                  <a href="{{ url_for('update_form', emp_id=employee[0]) }}">Update</a> |
+                  <a href="{{ url_for('delete_employee', emp_id=employee[0]) }}">Delete</a>
+                </center>
+              </td>
             </tr>
-          {% endfor %}
-         </tr> 
-      </table>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-
 </body>
 
 </html>

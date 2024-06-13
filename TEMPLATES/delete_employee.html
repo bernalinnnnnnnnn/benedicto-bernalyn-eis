@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  <title>Update Employee</title>
+  <title>UPDATE IST</title>
   <style>
     body {
       min-height: 100vh;
@@ -24,7 +24,8 @@
 </head>
 
 <body>
-  <section class="hero is-info is-family-secondary is-italic">
+    <form action="delete-employee" method="POST"></form>
+  <section class="hero is-1 has-background-info is-family-secondary is-italic">
     <div class="hero-body">
       <p class="title is-4">Employee Information System</p>
       <p class="subtitle is-5 is-family-monospace">Bernalyn Mecurio Benedicto</p>
@@ -73,13 +74,13 @@
       <section class="title is-4 is-family-secondary has-text-weight-bold">
         <div class="hero-body">
           <p class="title">
-            <center><b>UPDATE EMPLOYEE</b></center>
+            <center><b>DELETE EMPLOYEE</b></center>
           </p>
         </div>
       </section>
 
       <div style="max-width: 900px;" class="container">
-        <form class="box has-background-danger" action="{{ url_for('update_employee', emp_id=employee[0]) }}" method="POST">
+        <form class="box has-background-danger">
           <div class="field is-horizontal">
             <div class="field-label is-normal">
               <label class="label">EMPLOYEE ID</label>
@@ -87,28 +88,48 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <input class="input" type="text" name="emp_id" value="{{ employee[0] }}" readonly>
+                  <input class="input" type="text" placeholder="Enter employee id">
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="field">
-            <label class="label">Last Name</label>
-            <div class="control">
-              <input class="input" type="text" name="lname" value="{{ employee[1] }}" required>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">LAST NAME</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter last name">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="field">
-            <label class="label">First Name</label>
-            <div class="control">
-              <input class="input" type="text" name="fname" value="{{ employee[2] }}" required>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">FIRST NAME</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter first name">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="field">
-            <label class="label">Middle Name</label>
-            <div class="control">
-              <input class="input" type="text" name="mname" value="{{ employee[3] }}" required>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">MIDDLE NAME</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter middle name">
+                </div>
+              </div>
             </div>
           </div>
 
@@ -119,7 +140,7 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <input class="input" type="text" name="address" placeholder="Enter address" value="{{ employee[4] }}">
+                  <input class="input" type="text" placeholder="Enter address">
                 </div>
               </div>
             </div>
@@ -132,7 +153,7 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <input class="input" type="date" name="birthday" placeholder="Enter birthday" value="{{ employee[5] }}">
+                  <input class="input" type="date" placeholder="Enter birthday">
                 </div>
               </div>
             </div>
@@ -144,34 +165,32 @@
             </div>
             <div class="field-body">
               <div class="field">
-                <div class="control">
-                  <div class="select">
-                    <select name="civil_status">
-                      <option value="SINGLE" {% if employee[6] == 'SINGLE' %} selected {% endif %}>SINGLE</option>
-                      <option value="MARRIED" {% if employee[6] == 'MARRIED' %} selected {% endif %}>MARRIED</option>
-                      <option value="IN AN OPEN RELATIONSHIP" {% if employee[6] == 'IN AN OPEN RELATIONSHIP' %} selected {% endif %}>IN AN OPEN RELATIONSHIP</option>
-                      <option value="WIDOWED" {% if employee[6] == 'WIDOWED' %} selected {% endif %}>WIDOWED</option>
-                      <option value="KABIT" {% if employee[6] == 'KABIT' %} selected {% endif %}>KABIT</option>
-                    </select>
-                  </div>
+                <div class="select">
+                  <select>
+                    <option></option>
+                    <option>SINGLE</option>
+                    <option>MARRIED</option>
+                    <option>IN AN OPEN RELATIONSHIP</option>
+                    <option>WIDOWED</option>
+                    <option>KABIT</option>
+                  </select>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="field is-grouped">
+          <div class="field is-grouped is-grouped-centered">
             <div class="control">
-              <button class="button is-link" type="submit">Save</button>
-            </div>
-            <div class="control">
-              <a class="button is-light" href="{{ url_for('employee_list') }}">Cancel</a>
+              <button class="button has-background-danger-light">
+                <a class="has-text-black" href="employee_list.html">SAVE</a>
+              </button>
             </div>
           </div>
         </form>
       </div>
     </div>
-  </div>
 
+  </div>
   <footer class="footer">
     <div class="content has-text-centered">
       <p></p>

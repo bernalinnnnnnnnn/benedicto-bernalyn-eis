@@ -4,13 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='bulma/bulma.css') }}">
     <title>LOGIN</title>
+    <style>
+        .container {
+            max-width: 500px;
+            padding: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 0.5rem;
+            }
+        }
+
+        .box {
+            padding: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .box {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div style="width: 500px;" class="container">
+    <div class="container">
         <h1 class="title is-1 has-text-centered has-text-danger has-text-weight-bold">LOGIN</h1>
         <form action="check-user" method="POST" class="box has-background-danger-light">
             <div class="field">
