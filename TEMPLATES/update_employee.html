@@ -69,17 +69,17 @@
         </div>
       </section>
     </div>
-    <div class="column is-centered has-background-danger-light">
+    <div class="column is-centered">
       <section class="title is-4 is-family-secondary has-text-weight-bold">
         <div class="hero-body">
-          <p class="title">
-            <center><b>UPDATE EMPLOYEE</b></center>
+          <p class="title has-text-centered">
+            <b>UPDATE EMPLOYEE</b>
           </p>
         </div>
       </section>
 
       <div style="max-width: 900px;" class="container">
-        <form class="box has-background-danger" action="{{ url_for('update_employee', emp_id=employee[0]) }}" method="POST">
+        <form class="box has-background-primary" action="{{ url_for('update_employee', emp_id=employee[0]) }}" method="POST">
           <div class="field is-horizontal">
             <div class="field-label is-normal">
               <label class="label">EMPLOYEE ID</label>
@@ -159,7 +159,7 @@
             </div>
           </div>
 
-          <div class="field is-grouped">
+          <div class="field is-grouped is-grouped-centered">
             <div class="control">
               <button class="button is-link" type="submit">Save</button>
             </div>
